@@ -25,7 +25,6 @@ logging.basicConfig(
 
 ADMIN_LINKS = {
     "saksahanskoho": "https://t.me/dingiortattoo",
-    "lysenka": "https://t.me/tattooskool",
 }
 
 
@@ -57,19 +56,6 @@ https://www.dingiortattoo.com/wp-content/uploads/2019/02/Route_to_studio0.mp4
 ❗ Термінала немає, тому бажано мати готівку.
 
 Чекаємо на вас 🖤
-""".strip(),
-
-    "lysenka": """
-📍 ЯК НАС ЗНАЙТИ
-
-вул. Лисенка, 8–44
-🚇 Найзручніше від метро Золоті ворота.
-
-🗺 Google Maps:
-https://www.google.com/maps/place/%D1%83%D0%BB.+%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D1%8F+%D0%9B%D1%8B%D1%81%D0%B5%D0%BD%D0%BA%D0%BE,+8,+%D0%9A%D0%B8%D0%B5%D0%B2,+%D0%A3%D0%BA%D1%80%D0%B0%D0%B8%D0%BD%D0%B0,+02000/@50.4471106,30.5088689,17z/data=!3m1!4b1!4m6!3m5!1s0x40d4ce5843027069:0x204b43e37daad85b!8m2!3d50.4471106!4d30.5114438!16s%2Fg%2F11snt4yvkc
-
-☎️ Телефон:
-+380666424666
 """.strip(),
 }
 
@@ -278,12 +264,6 @@ def booking_keyboard() -> InlineKeyboardMarkup:
                     callback_data="booking:saksahanskoho",
                 )
             ],
-            [
-                InlineKeyboardButton(
-                    "📍 Лисенка",
-                    callback_data="booking:lysenka",
-                )
-            ],
             [InlineKeyboardButton("⬅️ Назад", callback_data="menu:main")],
         ]
     )
@@ -307,12 +287,6 @@ def addresses_keyboard() -> InlineKeyboardMarkup:
                 InlineKeyboardButton(
                     "📍 Саксаганського",
                     callback_data="address:saksahanskoho",
-                )
-            ],
-            [
-                InlineKeyboardButton(
-                    "📍 Лисенка",
-                    callback_data="address:lysenka",
                 )
             ],
             [InlineKeyboardButton("⬅️ Назад", callback_data="menu:main")],
