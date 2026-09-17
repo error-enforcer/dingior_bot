@@ -32,9 +32,9 @@ BOOKING_TEXT = """
 👋 Привіт!
 
 Для запису надішліть усі 3 пункти:
-• дату;
-• бажаний час;
-• номер телефону.
+1. дату;
+2. бажаний час;
+3. номер телефону.
 
 Адміністратор перевірить графік та підтвердить запис або запропонує найближче вільне віконце.
 """.strip()
@@ -248,7 +248,7 @@ def main_menu_keyboard() -> InlineKeyboardMarkup:
         [
             [InlineKeyboardButton("📝 Записатися", callback_data="menu:booking")],
             [InlineKeyboardButton("💰 Ціни", callback_data="menu:prices")],
-            [InlineKeyboardButton("📍 Адреси", callback_data="menu:addresses")],
+            [InlineKeyboardButton("📍 Адреса", callback_data="menu:addresses")],
             [InlineKeyboardButton("🧴 Догляд", callback_data="menu:care")],
             [InlineKeyboardButton("🎓 Школа", callback_data="menu:school")],
         ]
@@ -417,7 +417,7 @@ async def handle_button(
 
     if data == "menu:booking":
         await query.edit_message_text(
-            "📝 Записатися\n\nОберіть зручну локацію:",
+            "📝 Записатися\n\nОберіть адресу студії:",
             reply_markup=booking_keyboard(),
         )
         return
@@ -431,7 +431,7 @@ async def handle_button(
 
     if data == "menu:addresses":
         await query.edit_message_text(
-            "📍 Адреси\n\nОберіть потрібну локацію:",
+            "📍 Адреса\n\nОберіть адресу студії:",
             reply_markup=addresses_keyboard(),
         )
         return
